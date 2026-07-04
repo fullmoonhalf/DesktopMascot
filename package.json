@@ -1,0 +1,18 @@
+{
+  "name": "desktop-mascot",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc --build",
+    "dev": "pnpm --filter @desktop-mascot/desktop dev",
+    "typecheck": "pnpm --filter @desktop-mascot/shared --filter @desktop-mascot/agent-core --filter @desktop-mascot/llm --filter @desktop-mascot/mcp-client --filter @desktop-mascot/news --filter @desktop-mascot/storage typecheck && pnpm --filter @desktop-mascot/desktop typecheck"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=22",
+    "pnpm": ">=9"
+  }
+}
