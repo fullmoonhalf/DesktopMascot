@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc --build",
     "dev": "pnpm --filter @desktop-mascot/desktop dev",
+    "tauri": "pnpm --filter @desktop-mascot/desktop tauri",
     "typecheck": "pnpm --filter @desktop-mascot/shared --filter @desktop-mascot/agent-core --filter @desktop-mascot/llm --filter @desktop-mascot/mcp-client --filter @desktop-mascot/news --filter @desktop-mascot/storage typecheck && pnpm --filter @desktop-mascot/desktop typecheck"
   },
   "devDependencies": {
