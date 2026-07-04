@@ -1,4 +1,5 @@
 import type { MascotExpression, MascotMotion } from "./mascot.js";
+import type { IsoDateString } from "./primitives.js";
 
 export type MessageSource = "news" | "user" | "system";
 
@@ -8,6 +9,5 @@ export interface AgentMessage {
   readonly expression: MascotExpression;
   readonly motion: MascotMotion;
   readonly source: MessageSource;
-  /** ISO 8601 date-time string. */
-  readonly createdAt: string;
+  readonly createdAt: IsoDateString;
 }

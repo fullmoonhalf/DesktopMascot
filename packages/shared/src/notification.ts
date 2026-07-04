@@ -1,3 +1,5 @@
+import type { IsoDateString } from "./primitives.js";
+
 export type NotificationPriority = "low" | "normal" | "high";
 
 export interface NotificationItem {
@@ -6,8 +8,6 @@ export interface NotificationItem {
   readonly body: string;
   readonly source: string;
   readonly priority: NotificationPriority;
-  /** ISO 8601 date-time string. */
-  readonly createdAt: string;
-  /** ISO 8601 date-time string. */
-  readonly readAt?: string;
+  readonly createdAt: IsoDateString;
+  readonly readAt?: IsoDateString;
 }

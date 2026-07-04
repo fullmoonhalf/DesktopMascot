@@ -3,6 +3,7 @@ export type { MascotExpression, MascotMotion } from "./mascot.js";
 export type { NotificationItem, NotificationPriority } from "./notification.js";
 export type { NewsItem } from "./news.js";
 export type { Result } from "./result.js";
+export type * from "./primitives.js";
 
 import type { AgentMessage } from "./agent-message.js";
 import type { NotificationItem } from "./notification.js";
