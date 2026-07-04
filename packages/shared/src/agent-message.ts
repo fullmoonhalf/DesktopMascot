@@ -8,5 +8,6 @@ export interface AgentMessage {
   readonly expression: MascotExpression;
   readonly motion: MascotMotion;
   readonly source: MessageSource;
+  /** ISO 8601 date-time string. */
   readonly createdAt: string;
 }
