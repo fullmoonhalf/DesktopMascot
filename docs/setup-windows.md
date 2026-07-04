@@ -21,7 +21,7 @@ pnpm tauri build
 
 Confirm the build completes and Windows bundle artifacts are generated under:
 
-`/apps/desktop/src-tauri/target/release/bundle/`
+`apps/desktop/src-tauri/target/release/bundle/`
 
 ## Notes
 
