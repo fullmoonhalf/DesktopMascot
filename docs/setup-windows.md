@@ -29,11 +29,14 @@ Confirm the build completes and Windows bundle artifacts are generated under:
 - setup pnpm
 ```powershell
 Invoke-WebRequest https://get.pnpm.io/install.ps1 -UseBasicParsing | Invoke-Expression
+cd $(project root)
+pnpm install --frozen-lockfile
+
 ```
 
 - setup Rust
 ```powershell
-winget inistall Rustlang.Rustup
+winget install Rustlang.Rustup
 ```
 
 

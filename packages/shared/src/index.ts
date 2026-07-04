@@ -1,61 +1,12 @@
-// Domain types for DesktopMascot
+export type { AgentMessage, MessageSource } from "./agent-message.js";
+export type { MascotExpression, MascotMotion } from "./mascot.js";
+export type { NotificationItem, NotificationPriority } from "./notification.js";
+export type { NewsItem } from "./news.js";
+export type { Result } from "./result.js";
+export type * from "./primitives.js";
 
-// ── Mascot ────────────────────────────────────────────────────────────────────
-
-export type MascotExpression =
-  | "neutral"
-  | "happy"
-  | "thinking"
-  | "surprised"
-  | "sleepy"
-  | "warning";
-
-export type MascotMotion =
-  | "idle"
-  | "nod"
-  | "wave"
-  | "jump"
-  | "alert";
-
-// ── Agent message ─────────────────────────────────────────────────────────────
-
-export type AgentMessageSource = "news" | "user" | "system";
-
-export interface AgentMessage {
-  readonly id: string;
-  readonly text: string;
-  readonly expression: MascotExpression;
-  readonly motion: MascotMotion;
-  readonly source: AgentMessageSource;
-  readonly createdAt: Date;
-}
-
-// ── Notification ──────────────────────────────────────────────────────────────
-
-export type NotificationPriority = "low" | "normal" | "high";
-
-export interface NotificationItem {
-  readonly id: string;
-  readonly title: string;
-  readonly body: string;
-  readonly source: string;
-  readonly priority: NotificationPriority;
-  readonly createdAt: Date;
-  readonly readAt: Date | undefined;
-}
-
-// ── News ──────────────────────────────────────────────────────────────────────
-
-export interface NewsItem {
-  readonly id: string;
-  readonly title: string;
-  readonly url: string;
-  readonly source: string;
-  readonly summary: string | undefined;
-  readonly publishedAt: Date;
-}
-
-// ── Provider / service interfaces ─────────────────────────────────────────────
+import type { AgentMessage } from "./agent-message.js";
+import type { NotificationItem } from "./notification.js";
 
 export interface LlmProvider {
   summarize(text: string): Promise<string>;
@@ -70,7 +21,8 @@ export interface McpClient {
 export interface StorageService {
   saveNotification(item: NotificationItem): Promise<void>;
   loadNotifications(): Promise<ReadonlyArray<NotificationItem>>;
-  markAsRead(id: string, readAt: Date): Promise<void>;
+  /** `readAt` must be an ISO 8601 date-time string. */
+  markAsRead(id: string, readAt: string): Promise<void>;
 }
 
 export interface NotificationService {
