@@ -20,6 +20,7 @@ export interface McpClient {
 export interface StorageService {
   saveNotification(item: NotificationItem): Promise<void>;
   loadNotifications(): Promise<ReadonlyArray<NotificationItem>>;
+  /** `readAt` must be an ISO 8601 date-time string. */
   markAsRead(id: string, readAt: string): Promise<void>;
 }
 
