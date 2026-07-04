@@ -23,6 +23,20 @@ Confirm the build completes and Windows bundle artifacts are generated under:
 
 `apps/desktop/src-tauri/target/release/bundle/`
 
+
+## environment setup
+
+- setup pnpm
+```powershell
+Invoke-WebRequest https://get.pnpm.io/install.ps1 -UseBasicParsing | Invoke-Expression
+```
+
+- setup Rust
+```powershell
+winget inistall Rustlang.Rustup
+```
+
+
 ## Notes
 
 - If `pnpm tauri` is not recognized, ensure dependencies are installed at the repo root with `pnpm install`.
