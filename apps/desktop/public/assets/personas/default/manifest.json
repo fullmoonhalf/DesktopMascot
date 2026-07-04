@@ -1,0 +1,6 @@
+{
+  "id": "default",
+  "displayName": "Default",
+  "renderer": "png",
+  "defaultExpression": "neutral"
+}
